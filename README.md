@@ -1,0 +1,1 @@
+# test-argocd-vault-plugin
