@@ -28,4 +28,4 @@ spec:
           value: https://vault-cluster-public-vault-c433796e.3a4c0a9f.z1.hashicorp.cloud:8200
       name: argocd-vault-plugin
     repoURL: https://github.com/erickbitso/test-argocd-vault-plugin.git
-    targetRevision: master
+    targetRevision: main
