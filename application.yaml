@@ -1,31 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-secrets
-  namespace: argocd
+  name: sample-secret
 spec:
   destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: secrets
+    repoURL: 'https://github.com/erickbitso/test-argocd-vault-plugin'
+    targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin
   project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-  source:
-    path: secrets
-    plugin:
-      env:
-        - name: AVP_TYPE
-          value: vault
-        - name: AVP_AUTH_TYPE
-          value: approle
-        - name: AVP_ROLE_ID
-          value: argocd-repo-server
-        - name: AVP_SECRET_ID
-          value: 5db8d41d-157d-31c2-18d4-8d57c84c0469
-        - name: VAULT_ADDR
-          value: https://vault-cluster-public-vault-c433796e.3a4c0a9f.z1.hashicorp.cloud:8200
-      name: argocd-vault-plugin
-    repoURL: https://github.com/erickbitso/test-argocd-vault-plugin.git
-    targetRevision: main
