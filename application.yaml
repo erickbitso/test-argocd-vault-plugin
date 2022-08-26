@@ -12,17 +12,6 @@ spec:
     targetRevision: HEAD
     plugin:
       name: argocd-vault-plugin
-      env:
-      - name: VAULT_ADDR
-        value: "https://vault-cluster-public-vault-c433796e.3a4c0a9f.z1.hashicorp.cloud:8200"
-      - name: VAULT_TOKEN
-        value: "hvs.CAESILoN5HOJaxbECjPEoLiJ3rvZPJalWK0F2wh_M_OPcm94GigKImh2cy55UTd4YjlHMElhTE5XWWdCSDRlZ09HN3UuN2pqbkgQ4tYB"
-      - name: VAULT_NAMESPACE
-        value: admin
-      - name: AVP_TYPE
-        value: vault
-      - name: AVP_AUTH_TYPE
-        value: token
   project: default
   syncPolicy:
     automated:
