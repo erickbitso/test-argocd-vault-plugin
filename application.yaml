@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: erick-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: secrets
+    plugin:
+      name: argocd-vault-plugin
+    repoURL: https://github.com/erickbitso/test-argocd-vault-plugin.git
+    targetRevision: HEAD
