@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: aws-example-crossaccount
-stringData:
-  sample-secret: <path:arn:aws:secretsmanager:us-east-2:143913848869:secret:testingone-hHMOxV#mysecretvalue>
-type: Opaque
