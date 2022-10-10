@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-example-pathlargo
+stringData:
+  sample-secret: <path:arn:aws:secretsmanager:us-east-2:402261350347:secret:testingone-hegWFn#next>
+type: Opaque
