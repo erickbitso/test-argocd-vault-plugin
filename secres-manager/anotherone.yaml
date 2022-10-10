@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: anotherone
+  annotations:
+    avp.kubernetes.io/path: "preprod/k8s/myapp"
+    avp.kubernetes.io/secret-version: "AWSCURRENT"
+stringData:
+  sample-secret: mysecret
+type: Opaque

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-example
+stringData:
+  inlineSecret: <path:arn:aws:secretsmanager:us-east-1:143913848869:secret:preprod/k8s/myapp-CnCWyV#AWSCURRENT>
+type: Opaque
